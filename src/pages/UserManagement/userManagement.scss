@@ -1,0 +1,37 @@
+.user-table {
+    .ant-table-wrapper {
+        .ant-table {
+            .ant-table-container {
+                tr {
+                    th {
+                        padding: 8px 8px;
+                    }
+
+                    td {
+                        padding: 8px 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .user-table {
+        .ant-table-wrapper {
+            .ant-table {
+                .ant-table-container {
+                    tr {
+                        th {
+                            padding: 16px 16px;
+                        }
+    
+                        td {
+                            padding: 16px 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

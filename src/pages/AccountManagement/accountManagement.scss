@@ -1,0 +1,54 @@
+#account-page {
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.account-page-body {
+    flex-grow: 1;
+}
+
+.ant-tabs.ant-tabs-top {
+    background: #ffff;
+
+    .ant-tabs-nav {
+        padding: 0 30vw;
+        &::before {
+            width: 100%;
+            // content: none;
+        }
+    }
+    .ant-tabs-nav {
+        .ant-tabs-nav-wrap {
+            .ant-tabs-nav-list {
+                .ant-tabs-tab {
+                    padding: 1rem 3rem;
+                    border: 1px rgba(128, 128, 128, 0.1) solid;
+                    // background: #ffff;
+                    transition: none;
+                    // margin-right: 10px;
+                }
+                .ant-tabs-tab.ant-tabs-tab-active {
+                    border: 2px solid #1677ff;
+                    background: #1677ff;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    border-bottom: none;
+                    font-weight: 600;
+                    transition: ease-in-out;
+
+                    .ant-tabs-tab-btn {
+                        color: #ffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-layout {
+    background: #ffff;
+}
+
+.account-loading-screen {
+    height: 50vh;
+}

@@ -1,0 +1,11 @@
+.movie_list {
+    margin-bottom: 6rem;
+}
+
+.ant-divider.ant-divider-horizontal.ant-divider-with-text.ant-divider-plain::before {
+    border-block-start-color: black;
+}
+
+.ant-divider.ant-divider-horizontal.ant-divider-with-text.ant-divider-plain::after {
+    border-block-start-color: black;
+}

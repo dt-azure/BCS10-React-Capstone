@@ -1,0 +1,90 @@
+.schedule__content {
+    height: 300px;
+}
+
+.tab_cinema {
+    height: 300px;
+    &.ant-tabs {
+        .ant-tabs-nav {
+            .ant-tabs-nav-list {
+                .ant-tabs-tab {
+                    padding: 0;
+                    padding-right: 24px;
+                }
+            }
+        }
+
+        .ant-tabs-content-holder {
+            overflow-y: scroll;
+        }
+    }
+
+    .label_cinema {
+        width: 200px;
+    }
+}
+
+.ant-tabs-dropdown {
+    display: none;
+}
+
+.ant-card.schedule-card {
+    border: 1px solid black;
+    border-radius: 4px;
+    background: #333333;
+    .ant-card-head {
+        background: #333333;
+        color: #ffff;
+        border-bottom: 3px solid rgb(249 115 22);
+    }
+
+    .ant-card-body {
+        background: #333333;
+        color: #ffff;
+        border-radius: none;
+    }
+
+    &:hover {
+        background: #15803d;
+        cursor: pointer;
+        .ant-card-head {
+            background: #15803d;
+            color: #ffff;
+        }
+
+        .ant-card-body {
+            background: #15803d;
+            color: #ffff;
+        }
+    }
+}
+
+.schedule-datetime {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        span {
+            font-weight: 700;
+            color: white;
+        }
+
+        .schedule-time {
+            color: #fde047
+        }
+    }
+}
+
+@media (min-width: 641px) {
+    .tab_cinema {
+        height: 500px;
+    }
+    .schedule__content {
+        height: 500px;
+    }
+}
+
+// @media (min-width: 1024px) {
+//     .schedule__content {
+//         height: 700px;
+//     }
+// }

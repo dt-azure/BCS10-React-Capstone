@@ -1,0 +1,39 @@
+.demo-loadmore-list {
+    min-height: 350px;
+}
+
+// .booking-img {
+//     width: 60px;
+// }
+
+.account-page-body {
+    .ant-list {
+        padding: 0 12px;
+        .ant-spin-container {
+            .ant-list-items {
+                justify-content: flex-start;
+                
+                .ant-list-item {
+                    padding: 2rem 0;
+                    align-items: flex-start;
+                    .ant-list-item-meta {
+                        width: 50%;
+                        flex: 1;
+                    }
+                    .seat-list {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .account-page-body {
+        .ant-list {
+            padding: 0;
+        }
+    }
+    
+}

@@ -1,0 +1,39 @@
+.ant-tabs.ant-tabs-top.ant-tabs-centered {
+    background: #ffff;
+}
+
+.ant-card .ant-card-body {
+    padding: 0.5rem;
+    background-color: #ffff;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px inset;
+    display: flex;
+    align-items: center;
+
+    .ant-input.ant-input-outlined {
+        border: none;
+        background: none;
+        height: 100%;
+
+        &:focus-within {
+            border: none;
+            background: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.ant-btn.ant-btn-primary {
+    background: #1677ff;
+}
+
+#account-edit-btn {
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .ant-card .ant-card-body {
+        padding: 1rem;
+    }
+}

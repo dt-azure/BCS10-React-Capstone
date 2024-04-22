@@ -1,0 +1,53 @@
+// .poster-input {
+//     position: relative;
+
+//     .btn-field {
+//         position: absolute;
+//         top: 20%;
+//         left: 20%;
+//     }
+// }
+
+// .poster-frame {
+//     margin-left: 150px;
+//     margin-top: -3%;
+//     width: 300px;
+//     height: 350px;
+//     border: 1px solid black;
+//     border-radius: 4px;
+//     overflow: hidden;
+//     object-fit: contain;
+// }
+
+.poster-frame {
+    margin-left: 20%;
+}
+
+.poster {
+    width: 5rem;
+}
+
+.btn-field {
+    margin-left: 20%;
+}
+
+.close-btn {
+    font-size: 2rem;
+    color: red;
+}
+
+.ant-layout {
+    .ant-layout-content {
+        padding: 14px;
+        margin: 12px 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ant-layout {
+        .ant-layout-content {
+            margin: 20px 24px;
+        }
+    }
+    
+}
