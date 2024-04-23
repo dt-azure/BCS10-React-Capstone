@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import InputCustom from "../../components/Input/InputCustom";
+import InputPasswordCustom from "../../components/Input/InputPasswordCustom";
 import Lottie from "react-lottie";
 import * as registerAnimation from "../../assets/animation/register.json";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { manageUsersServ } from "../../services/manageUsers";
-import { ToastContainer, toast } from "react-toastify";
 import { NotifyContext } from "../../template/UserTemplate/UserTemplate";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getLocalStorage, saveLocalStorage } from "../../utils/util";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -86,8 +86,7 @@ const SignIn = () => {
               labelClassName="w-1/2"
             />
 
-            <InputCustom
-              type="password"
+            <InputPasswordCustom
               placeholder="Enter your password"
               id="matKhau"
               label="Password"

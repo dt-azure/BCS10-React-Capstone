@@ -1,9 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import InputCustom from "../../components/Input/InputCustom";
 import { DatePicker, Rate } from "antd";
 import SwitchCustom from "../../components/Input/SwitchCustom";
@@ -21,7 +16,6 @@ import {
 } from "../../redux/slice/movieAdminSlice";
 import dayjs from "dayjs";
 import { NotifyContext } from "../../template/UserTemplate/UserTemplate";
-
 
 const AddMovie = () => {
   const currentDate = new Date();
@@ -42,8 +36,9 @@ const AddMovie = () => {
 
   const [menuKey, setMenuKey] = useOutletContext();
 
-  let defaultDate = selectedMovie.ngayKhoiChieu ? dayjs(selectedMovie.ngayKhoiChieu) : dayjs()
-
+  let defaultDate = selectedMovie.ngayKhoiChieu
+    ? dayjs(selectedMovie.ngayKhoiChieu)
+    : dayjs();
 
   const notify = useContext(NotifyContext);
 
@@ -83,8 +78,12 @@ const AddMovie = () => {
         }
 
         if (update) {
-          await manageMoviesServ.updateMovie(formData);
-          notify("Movie updated successfully.");
+          try {
+            await manageMoviesServ.updateMovie(formData);
+            notify("Movie updated successfully.");
+          } catch (err) {
+            console.log(err)
+          }
         } else {
           await manageMoviesServ.uploadMovie(formData);
           resetForm();
@@ -109,7 +108,7 @@ const AddMovie = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setMenuKey(["1"])
+    setMenuKey(["1"]);
     if (update) {
       setValues(selectedMovie);
       setPoster(selectedMovie.hinhAnh);
@@ -165,7 +164,10 @@ const AddMovie = () => {
           error={errors.moTa}
         />
         <div className="flex items-center">
-          <label className="text-right pr-5 w-1/2 md:w-1/4 font-bold" htmlFor="">
+          <label
+            className="text-right pr-5 w-1/2 md:w-1/4 font-bold"
+            htmlFor=""
+          >
             Enter First Screening Date
           </label>
           <div className="w-full">
@@ -176,19 +178,17 @@ const AddMovie = () => {
                 if (datejs <= currentDate) {
                   setFieldValue("ngayKhoiChieu", null);
                   setDateStatus("error");
-                  
                 } else {
                   setFieldValue("ngayKhoiChieu", dateString);
                   setDateStatus("none");
                 }
-                
               }}
               format="DD-MM-YYYY"
               error={errors.ngayKhoiChieu}
               defaultValue={defaultDate}
               // value={
               //   values.ngayKhoiChieu !== ""
-              //     ? 
+              //     ?
               //     : null
               // }
             />
@@ -207,7 +207,10 @@ const AddMovie = () => {
           </div>
         </div>
         <div className="flex items-center">
-          <label className="w-1/2 md:w-1/4 text-right pr-5 font-bold" htmlFor="">
+          <label
+            className="w-1/2 md:w-1/4 text-right pr-5 font-bold"
+            htmlFor=""
+          >
             Movie Status
           </label>
           <div className="w-full flex flex-col md:flex-row items-center justify-start">
@@ -235,7 +238,10 @@ const AddMovie = () => {
           </div>
         </div>
         <div className="flex items-center">
-          <label className="text-right pr-5 w-1/2 md:w-1/4 font-bold" htmlFor="">
+          <label
+            className="text-right pr-5 w-1/2 md:w-1/4 font-bold"
+            htmlFor=""
+          >
             Rating
           </label>
           <div className="w-full">
@@ -252,7 +258,10 @@ const AddMovie = () => {
           </div>
         </div>
         <div className="flex poster-input">
-          <label className="text-right pr-5 w-1/2 md:w-1/4 font-bold" htmlFor="">
+          <label
+            className="text-right pr-5 w-1/2 md:w-1/4 font-bold"
+            htmlFor=""
+          >
             Poster
           </label>
           <div className="w-full flex">

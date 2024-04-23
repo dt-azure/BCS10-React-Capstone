@@ -117,7 +117,6 @@ const SignUp = () => {
             /> */}
 
             <InputPasswordCustom
-              clas
               placeholder="Enter your password"
               id="matKhau"
               label="Password"
