@@ -14,6 +14,7 @@ const InputCustom = ({
   readOnly,
   type = "text",
   labelClassName = "",
+  disabled = false
 }) => {
   return (
     <div className={`flex ${error && touched ? "items-start" : "items-center" }`}>
@@ -38,6 +39,7 @@ const InputCustom = ({
           value={value}
           onBlur={onBlur}
           readOnly={readOnly ? true : false}
+          disabled={disabled}
         />
 
         {error && touched ? (

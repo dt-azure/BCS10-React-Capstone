@@ -47,11 +47,10 @@ const SignUp = () => {
           })
           .catch((err) => {
             notify(err.response.data.content);
-          })
-          .finally(() => {
-            navigate("/");
           });
+        navigate("/");
       } else {
+        console.log(values)
         manageUsersServ
           .updateUser({
             ...values,
@@ -65,7 +64,8 @@ const SignUp = () => {
               navigate("/account");
               notify("User info updated successfully.");
             } catch (error) {
-              notify(error.response.data.content);
+              notify("An error has occured.");
+              
             }
           })
           .catch((err) => {
@@ -134,7 +134,7 @@ const SignUp = () => {
   }, []);
 
   return (
-    <div className="h-1/2 lg:h-70-screen flex">
+    <div className="h-1/2 flex">
       <div className="animation_signIn w-0 md:w-1/3 lg:w-5/12 flex items-center md:translate-x-10 lg:translate-x-20">
         <Lottie
           options={defaultOptions}
@@ -157,6 +157,7 @@ const SignUp = () => {
               touched={touched.taiKhoan}
               name="taiKhoan"
               value={values.taiKhoan}
+              disabled = {update ? true : false}
             />
 
             {/* <InputCustom
