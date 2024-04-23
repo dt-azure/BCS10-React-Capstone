@@ -18,7 +18,7 @@ const SignUp = () => {
   const [dimensions, setDimensions] = useState({ width: 400, height: 400 });
   const { submit, update } = useSelector((state) => state.userAdminSlice);
   const dispatch = useDispatch();
-  const userLocal = getLocalStorage("user");
+  let userLocal = getLocalStorage("user");
 
   const {
     handleChange,
@@ -41,16 +41,18 @@ const SignUp = () => {
         manageUsersServ
           .signUp({ ...values, maNhom: "GP01" })
           .then(async (res) => {
-            notify("Sign up successfully.");
+            notify("Sign up successfully. Redirecting to account page...");
             const userData = await manageUsersServ.signIn(values);
             saveLocalStorage("user", userData);
+            setTimeout(() => {
+              navigate("/account");
+            }, 2000);
           })
           .catch((err) => {
             notify(err.response.data.content);
           });
-        
       } else {
-        console.log(values)
+        console.log(values);
         manageUsersServ
           .updateUser({
             ...values,
@@ -65,7 +67,6 @@ const SignUp = () => {
               notify("User info updated successfully.");
             } catch (error) {
               notify("An error has occured.");
-              
             }
           })
           .catch((err) => {
@@ -127,7 +128,7 @@ const SignUp = () => {
     return () => {
       dispatch(handleEnableSubmitBtn());
     };
-  }, [userLocal]);
+  }, []);
 
   return (
     <div className="h-1/2 flex">
@@ -153,7 +154,7 @@ const SignUp = () => {
               touched={touched.taiKhoan}
               name="taiKhoan"
               value={values.taiKhoan}
-              disabled = {update ? true : false}
+              disabled={update ? true : false}
             />
 
             {/* <InputCustom
