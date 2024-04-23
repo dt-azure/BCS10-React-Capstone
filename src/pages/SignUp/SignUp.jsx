@@ -108,10 +108,6 @@ const SignUp = () => {
   };
 
   useEffect(() => {
-    if (userLocal && submit) {
-      navigate("/");
-    }
-
     if (update) {
       let user = userLocal.data.content;
       setValues({
@@ -131,7 +127,7 @@ const SignUp = () => {
     return () => {
       dispatch(handleEnableSubmitBtn());
     };
-  }, []);
+  }, [userLocal]);
 
   return (
     <div className="h-1/2 flex">
