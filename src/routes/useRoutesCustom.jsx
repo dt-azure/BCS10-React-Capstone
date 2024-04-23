@@ -35,6 +35,10 @@ const useRoutesCustom = () => {
           path: "/sign-up",
           element: <SignUp />,
         },
+        {
+          path: "/update-user/:slug",
+          element: <SignUp />,
+        },
       ],
     },
     {
