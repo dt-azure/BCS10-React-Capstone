@@ -84,7 +84,9 @@ const SeatLayout = () => {
         danhSachVe: ticketList,
       });
       notify("Ticket(s) booked successfully.");
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } catch (err) {
       console.log(err);
       notify("An error has occured.");
