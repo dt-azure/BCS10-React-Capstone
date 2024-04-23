@@ -44,7 +44,9 @@ const SignUp = () => {
             notify("Sign up successfully. Redirecting to account page...");
             const userData = await manageUsersServ.signIn(values);
             saveLocalStorage("user", userData);
-            
+            setTimeout(() => {
+              navigate("/account");
+            }, 2000);
           })
           .catch((err) => {
             notify(err.response.data.content);
