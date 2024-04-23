@@ -62,7 +62,9 @@ const SignUp = () => {
             try {
               const userRes = await manageUsersServ.signIn(values);
               saveLocalStorage("user", userRes);
-              notify("User info updated successfully. Redirecting to account page...");
+              notify(
+                "User info updated successfully. Redirecting to account page..."
+              );
               setTimeout(() => {
                 navigate("/account");
               }, 2000);

@@ -15,6 +15,7 @@ import {
 import { manageScheduleServ } from "../../services/manageSchedule";
 import { useNavigate } from "react-router-dom";
 import { NotifyContext } from "../../template/UserTemplate/UserTemplate";
+import { token } from "../../services/config";
 
 const SeatLayout = () => {
   const { scheduleId } = useParams();
