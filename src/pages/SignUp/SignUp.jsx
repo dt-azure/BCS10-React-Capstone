@@ -48,7 +48,7 @@ const SignUp = () => {
           .catch((err) => {
             notify(err.response.data.content);
           });
-        navigate("/");
+        
       } else {
         console.log(values)
         manageUsersServ
