@@ -44,15 +44,12 @@ const SignUp = () => {
             notify("Sign up successfully. Redirecting to account page...");
             const userData = await manageUsersServ.signIn(values);
             saveLocalStorage("user", userData);
-            setTimeout(() => {
-              navigate("/account");
-            }, 2000);
+            
           })
           .catch((err) => {
             notify(err.response.data.content);
           });
       } else {
-        console.log(values);
         manageUsersServ
           .updateUser({
             ...values,
@@ -63,8 +60,10 @@ const SignUp = () => {
             try {
               const userRes = await manageUsersServ.signIn(values);
               saveLocalStorage("user", userRes);
-              navigate("/account");
-              notify("User info updated successfully.");
+              notify("User info updated successfully. Redirecting to account page...");
+              setTimeout(() => {
+                navigate("/account");
+              }, 2000);
             } catch (error) {
               notify("An error has occured.");
             }

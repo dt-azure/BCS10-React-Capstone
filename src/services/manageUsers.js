@@ -14,7 +14,7 @@ export const manageUsersServ = {
     return http_access.post("/QuanLyNguoiDung/ThemNguoiDung", data);
   },
   updateUser: (data) => {
-    return http_access.post("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", data);
+    return http_access.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", data);
   },
   deleteUser: (account) => {
     return http_access.delete(
