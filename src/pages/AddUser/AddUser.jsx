@@ -123,6 +123,7 @@ const AddUser = () => {
           touched={touched.taiKhoan}
           error={errors.taiKhoan}
           labelClassName="w-1/4 text-right pr-5"
+          disabled = {update ? "disabled" : ""}
         />
         <InputCustom
           name="hoTen"

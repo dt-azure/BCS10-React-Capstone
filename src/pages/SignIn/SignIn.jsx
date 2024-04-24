@@ -32,7 +32,10 @@ const SignIn = () => {
         try {
           const res = await manageUsersServ.signIn(values);
           saveLocalStorage("user", res);
-          navigate("/");
+          notify("Signed in successfully.");
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
           // window.location.href("/");
         } catch (error) {
           notify(error.response.data.content);
@@ -58,7 +61,7 @@ const SignIn = () => {
     const userLocal = getLocalStorage("user");
     if (userLocal) {
       navigate("/");
-      dispatch(handleLoadingOff())
+      dispatch(handleLoadingOff());
     } else {
       dispatch(handleLoadingOff());
     }
