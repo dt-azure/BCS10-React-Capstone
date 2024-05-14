@@ -11,7 +11,7 @@ const loadingSlice = createSlice({
   reducers: {
     handleLoadingOff: (state, action) => {
       state.isCount -= 1;
-      if (state.isCount == 0) {
+      if (state.isCount <= 0) {
         state.isLoading = false;
       }
     },
