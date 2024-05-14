@@ -1,7 +1,8 @@
 import axios from "axios";
 import { getLocalStorage } from "../utils/util";
 
-export const token = getLocalStorage("user").data.content.accessToken;
+const user = getLocalStorage("user");
+const token = user ? user.data.content.accessToken : null;
 
 export const http = axios.create({
   baseURL: "https://movienew.cybersoft.edu.vn/api",
